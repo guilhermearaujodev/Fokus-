@@ -29,21 +29,25 @@ musicaFocoInput.addEventListener('change', () => {
 })
 
 focoBt.addEventListener('click', () => {
-  alterarContexto('foco')
-  focoBt.classList.add('active')
+    tempoDecorridoEmSegundos = 1500
+    alterarContexto('foco')
+    focoBt.classList.add('active')
 })
 
 curtoBt.addEventListener('click', () => {
-alterarContexto('descanso-curto')
-curtoBt.classList.add('active')
+    tempoDecorridoEmSegundos = 300
+    alterarContexto('descanso-curto')
+    curtoBt.classList.add('active')
 })
 
 longoBt.addEventListener('click', () => {
-alterarContexto('descanso-longo')
-longoBt.classList.add('active')
+    tempoDecorridoEmSegundos = 900
+    alterarContexto('descanso-longo')
+    longoBt.classList.add('active')
 })
 
 function alterarContexto(contexto) {
+    mostrarTempo()
     botoes.forEach(function (contexto){ 
         contexto.classList.remove('active')     
     })
