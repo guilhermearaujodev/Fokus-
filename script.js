@@ -15,7 +15,7 @@ const audioPlay = new Audio('./sons/play.wav')
 const audioPausa = new Audio('./sons/pause.mp3')
 const audioTempoFinalizado = new Audio('./sons/beep.mp3')
 
-let tempoDecorridoEmSegundos = 1500
+let tempoDecorridoEmSegundos = 1500 
 let intervaloId = null
 
 musica.loop = true
@@ -103,8 +103,9 @@ function zerar() {
 }
 
 function mostrarTempo() {
-    const tempo = tempoDecorridoEmSegundos
-    tempoNaTela.innerHTML = `${tempo}`
+    const tempo = new Date(tempoDecorridoEmSegundos * 1000)
+    const tempoFormatado = tempo.toLocaleTimeString('pt-br', {minute: '2-digit', second: '2-digit'})
+    tempoNaTela.innerHTML = `${tempoFormatado}`
 }
 
 mostrarTempo()
