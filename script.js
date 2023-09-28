@@ -10,6 +10,7 @@ const musicaFocoInput = document.querySelector('#alternar-musica')
 const musica = new Audio('./sons/luna-rise-part-one.mp3') 
 
 let tempoDecorridoEmSegundos = 5
+let intervaloId = null
 
 musica.loop = true
 
@@ -64,8 +65,13 @@ function alterarContexto(contexto) {
 }
 
 const contagemRegressiva = () => {
+    //iniciar()
     tempoDecorridoEmSegundos -= 1
     console.log('Temporizador: ' + tempoDecorridoEmSegundos )
 }
 
 startPauseBt.addEventListener('click', contagemRegressiva)
+
+function iniciar () {
+    intervaloId = setInterval(contagemRegressiva, 1000)
+}
