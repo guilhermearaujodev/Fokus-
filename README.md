@@ -1,5 +1,5 @@
 # Fokus- 
-==
+
 Nesse projeto foi utilizado as tecnologias HTML, CSS e JavaScript.
 
 Projeto inspirado na técnica Pomodoro. 
